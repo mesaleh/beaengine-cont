@@ -6,6 +6,9 @@
 ;
 ; *****************************************
 
+ MAX_INST_SIZE  equ 15            // represented internally (encoded) in binary - added by mostafa 
+ MAX_PREFIXES   equ 4
+ 
 struct REX_Struct
     W_      db    0
     R_      db    0
@@ -66,7 +69,7 @@ ends
 struct INSTRTYPE
     Category                dd   0
     Opcode                  dd   0
-    Mnemonic                db    16 dup(0)
+    Mnemonic                db   18 dup(0)
     BranchType              dd   0
     Flags                   EFLStruct
     AddrValue               dq   0

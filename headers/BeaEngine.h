@@ -16,7 +16,9 @@
 #endif
 
 
-#define INSTRUCT_LENGTH 64
+#define INSTRUCT_LENGTH 64            /* represented as a string    */
+#define MAX_INST_SIZE   15            /* represented internally (encoded) in binary - added by mostafa */
+#define MAX_PREFIXES    4             /* A typical instruction can have up to 4 prefixes of size 1 byte each. */
 
 #pragma pack(1)
 typedef struct {
@@ -81,7 +83,7 @@ typedef struct {
 typedef struct  {
    Int32 Category;
    Int32 Opcode;
-   char Mnemonic[16];
+   char Mnemonic[18];
    Int32 BranchType;
    EFLStruct Flags;
    UInt64 AddrValue;

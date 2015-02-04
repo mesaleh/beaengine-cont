@@ -40,8 +40,8 @@ uses Windows,SysUtils;
 
   const
      INSTRUCT_LENGTH = 64;     
-
-
+     MAX_INST_SIZE   = 15;            // represented internally (encoded) in binary - added by mostafa 
+     MAX_PREFIXES    = 4;
   type
 
      TREX_Struct = packed record
@@ -105,7 +105,7 @@ uses Windows,SysUtils;
      TINSTRTYPE = packed record
           Category : longint;
           Opcode : longint;
-          Mnemonic : array[0..15] of AnsiChar;
+          Mnemonic : array[0..17] of AnsiChar;
           BranchType : longint;
           Flags : TEFLStruct;
           AddrValue : int64;

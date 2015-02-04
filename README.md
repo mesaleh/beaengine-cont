@@ -29,3 +29,28 @@ MyDisasm.Argument2.ArgType == REGISTER_TYPE + GENERAL_REG + REG2
 MyDisasm.Argument2.ArgSize == 32
 MyDisasm.Argument2.AccessMode == READ
 ```
+# Build
+For Windows, to build a release version, install [cmake](http://www.cmake.org/download/) and [MinGW](http://sourceforge.net/projects/mingw/files/), add them to the system path, then to build a release version, excute:
+```
+build_rls.bat
+```
+or, for debug version, execute:
+```
+build_dbg.bat
+```
+
+For Linux, unzip the source in a directory "beaengine-cont", then type:
+```
+cmake ./beaengine-cont/
+make
+```
+
+# Usage
+After building the library, include the header file "BeaEngine.h" in the directory "/headers".
+Also, make sure to define the macro BEA_ENGINE_STATIC as follows. So a typical program should have these two lines first:
+``` 
+#define BEA_ENGINE_STATIC
+#include "BeaEngine.h"
+```
+
+# Enjoy!

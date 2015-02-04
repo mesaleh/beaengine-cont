@@ -6,6 +6,9 @@
 ;
 ; *****************************************
 
+MAX_INST_SIZE  equ 15            // represented internally (encoded) in binary - added by mostafa 
+MAX_PREFIXES   equ 4
+
 STRUC REX_Struct
     W_:      resb    1
     R_:      resb    1
@@ -66,7 +69,7 @@ ENDSTRUC
 STRUC INSTRTYPE
     Category:                resd   1
     Opcode:                  resd   1
-    Mnemonic:                resb   16
+    Mnemonic:                resb   18
     BranchType:              resd   1
     Flags:                   resb   EFLStruct_size
     AddrValue:               resq   1

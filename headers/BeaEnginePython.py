@@ -8,6 +8,8 @@
 from ctypes import *
 
 INSTRUCT_LENGTH = 64
+MAX_INST_SIZE  = 15            # represented internally (encoded) in binary - added by mostafa 
+MAX_PREFIXES   = 4
 
 class REX_Struct(Structure):
    _pack_= 1
@@ -65,7 +67,7 @@ class INSTRTYPE(Structure):
    _pack_= 1
    _fields_= [("Category", c_int32),
               ("Opcode", c_int32),
-              ("Mnemonic", c_char * 16),
+              ("Mnemonic", c_char * 18),
               ("BranchType", c_int32),
               ("Flags", EFLStruct),
               ("AddrValue", c_uint64),

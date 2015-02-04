@@ -5,6 +5,10 @@
 ;
 ;
 ; *****************************************
+
+MAX_INST_SIZE  equ 15            // represented internally (encoded) in binary - added by mostafa 
+MAX_PREFIXES   equ 4
+
 REX_Struct STRUCT
     W_      BYTE    0
     R_      BYTE    0
@@ -61,7 +65,7 @@ EFLStruct ENDS
 INSTRTYPE STRUCT
     Category                DWORD   0
     Opcode                  DWORD   0
-    Mnemonic                BYTE    16 dup(0)
+    Mnemonic                BYTE    18 dup(0)
     BranchType              SDWORD   0
     Flags                   EFLStruct <>
     AddrValue               QWORD   0

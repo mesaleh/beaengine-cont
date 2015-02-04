@@ -3,6 +3,9 @@
 
 ;Header for BeaEngine 4.x (PureBasic 32 bits)
 
+#MAX_INST_SIZE = 15            ;represented internally (encoded) in binary - added by mostafa 
+#MAX_PREFIXES  = 4
+
 Structure REX_Struct
   W_.b
   R_.b
@@ -61,7 +64,7 @@ Global Memorytype.MEMORYTYPE
 Structure INSTRTYPE
   Category.l
   Opcode.l
-  Mnemonic.b[16]
+  Mnemonic.b[18]
   BranchType.l
   Flags.EFLStruct
   AddrValue.q

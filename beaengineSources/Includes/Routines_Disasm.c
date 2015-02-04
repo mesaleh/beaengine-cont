@@ -28,6 +28,7 @@ int __bea_callspec__ Disasm (PDISASM pMyDisasm) {
             FixREXPrefixes(pMyDisasm);
             FillSegmentsRegisters(pMyDisasm);
             CompleteInstructionFields(pMyDisasm);
+            int InstrLen = (int) (GV.EIP_-(*pMyDisasm).EIP);
             #ifndef BEA_LIGHT_DISASSEMBLY
                 if (GV.SYNTAX_ == ATSyntax) {
                     BuildCompleteInstructionATSyntax(pMyDisasm);
@@ -37,6 +38,9 @@ int __bea_callspec__ Disasm (PDISASM pMyDisasm) {
                 }
             #endif
             if (GV.ERROR_OPCODE) {
+                return -1;
+            }
+            else if(InstrLen > MAX_INST_SIZE) {
                 return -1;
             }
             else {
