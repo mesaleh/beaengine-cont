@@ -1,5 +1,5 @@
 # Beaengine-cont
-Last version released by the author(s) of Beaengine is v4.1 rev175. Some bugs were found in this last version. Since the author(s) of Beaengine obviously no longer support or update the library, this fork is made to continue updating the library and to patch the found bugs.
+Last version released by the author(s) of Beaengine is v4.1 rev175. Some bugs were found in this last version. Since the author(s) of Beaengine seem to be no longer support or update the library, this fork is made to continue updating the library and to patch the found bugs.
 
 Beaengine orginal repository can be found at https://code.google.com/p/beaengine/
 
